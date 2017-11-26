@@ -25,11 +25,13 @@ public class ContaCliente extends Conta{
     
     public boolean removePedidosEntregues(String idPedido){
         boolean objeto = false;
+        
         for(Pedido pedido : pedidos){
-            if( pedido.getEstadoPedido().getStatusPedido().equals("Entregue")){
+            if( pedido.getEstadoPedido().equals("Entregue") ){
                 objeto = pedidos.remove(pedido);
             }
         }
+        
         return objeto;
     }
 

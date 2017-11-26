@@ -7,8 +7,8 @@ public class Pedido {
     private String id;
     private String voucher;
     private List<Item> itens;
-    private StatusPedido estadoPedido;
-
+    private State state;
+    
     public Pedido(String idLoja, String voucher, List<Item> itens){
     
         this.itens = new ArrayList<>();
@@ -16,13 +16,27 @@ public class Pedido {
         this.voucher =  voucher;
         this.id = "" + idLoja + this.voucher;   	   
         this.itens = itens;
-        this.estadoPedido = new StatusPedido();
 
+        
    }    
-
-    public StatusPedido getEstadoPedido(){
-        return this.estadoPedido;
+   public void setState(State state){
+       this.state = state;
+   }
+    
+   public String getEstadoPedido(){
+       return this.state.estadoPedido();
+   }
+    public void setEntregue(){
+        setState(new StateEntregue());        
     }
+    public void setPronto(){
+        setState(new StatePronto());
+    }
+ 
+    public void setVisualizado(){
+        setState(new StateVisualizado());
+    }
+ 
     public String getId() {
         return this.id;
     }

@@ -94,19 +94,19 @@ public class TelaPedidosLoja {
                 System.out.println("Digite o id do pedido: ");
                 this.idPedido = this.entrada.nextLine();
                 this.pedido = contPedidos.buscarPedido(idPedido);
-                this.pedido.getEstadoPedido().setStatusVisualizado();
+                this.pedido.setVisualizado();
                 break;
             case 4:
                 System.out.println("Digite o id do pedido: ");
                 this.idPedido = this.entrada.nextLine();
                 this.pedido = contPedidos.buscarPedido(idPedido);
-                this.pedido.getEstadoPedido().setStatusPronto();
+                this.pedido.setPronto();
                 break;
             case 5:
                 System.out.println("Digite o id do pedido: ");
                 this.idPedido = this.entrada.nextLine();
                 this.pedido = contPedidos.buscarPedido(idPedido);
-                this.pedido.getEstadoPedido().setStatusEntregue();
+                this.pedido.setEntregue();
                 break;
             case 6:
                 return;

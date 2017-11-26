@@ -31,7 +31,7 @@ public class TelaChecarPedidoCliente {
                 System.out.println("Preço Total: "+p.getPreco());
                 
                 item = 1;
-                System.out.println(p.getEstadoPedido().getStatusPedido());
+                System.out.println(p.getEstadoPedido());
                 
                System.out.println("--------------------------------"); 
             }
