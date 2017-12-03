@@ -53,7 +53,7 @@ public class ControllerPedido {
         todos = bancoPedido.getTodos();
         if(!todos.isEmpty()){
             for (Pedido p : todos){
-                if(!p.getEstadoPedido().equals("Visualizado")){
+                if(p.getState() == 0){
                     novos.add(p);
                 }
             }

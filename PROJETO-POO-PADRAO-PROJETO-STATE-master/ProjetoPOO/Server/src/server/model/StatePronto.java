@@ -12,8 +12,9 @@ package server.model;
 public class StatePronto implements State{
 
     @Override
-    public String estadoPedido() {
-        return "Pronto";
+    public void proximoEstadoPedido(Pedido pedido) {
+        pedido.setState(new StateEntregue());
     }
+
     
 }

@@ -16,27 +16,27 @@ public class Pedido {
         this.voucher =  voucher;
         this.id = "" + idLoja + this.voucher;   	   
         this.itens = itens;
-
+        this.setState((State) new StateNaoVisualizado());
         
    }    
    public void setState(State state){
        this.state = state;
    }
-    
-   public String getEstadoPedido(){
-       return this.state.estadoPedido();
+ 
+   public int getState(){
+       if(state instanceof StateNaoVisualizado){
+           return 0;
+       }
+       else if(state instanceof StateVisualizado){
+           return 1;
+       }
+       else if(state instanceof StatePronto){
+           return 2;
+       }
+       else{
+           return 3;
+       }
    }
-    public void setEntregue(){
-        setState(new StateEntregue());        
-    }
-    public void setPronto(){
-        setState(new StatePronto());
-    }
- 
-    public void setVisualizado(){
-        setState(new StateVisualizado());
-    }
- 
     public String getId() {
         return this.id;
     }
@@ -62,6 +62,10 @@ public class Pedido {
     
     public List <Item> getItens(){
         return this.itens;
+    }
+
+    public void proximoEstadoPedido() {
+        this.state.proximoEstadoPedido(this);
     }
 
 }

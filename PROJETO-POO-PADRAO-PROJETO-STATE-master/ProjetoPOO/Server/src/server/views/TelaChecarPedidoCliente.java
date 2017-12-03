@@ -31,7 +31,23 @@ public class TelaChecarPedidoCliente {
                 System.out.println("Preço Total: "+p.getPreco());
                 
                 item = 1;
-                System.out.println(p.getEstadoPedido());
+                switch(p.getState()){
+                    case 0:
+                        System.out.println("Não Visisualizado");
+                        break;
+                    case 1:
+                        System.out.println("Visualizado");
+                        break;
+                    case 2:
+                        System.out.println("Pronto");
+                        break;
+                    case 3:
+                        System.out.println("Entregue");
+                        break;
+                    default:
+                        System.out.println("ERRO");
+                        
+                }
                 
                System.out.println("--------------------------------"); 
             }

@@ -5,18 +5,15 @@
  */
 package server.model;
 
-
 /**
  *
  * @author junior
  */
-public class StateVisualizado implements State{
+public class StateNaoVisualizado implements State{
 
     @Override
     public void proximoEstadoPedido(Pedido pedido) {
-        pedido.setState(new StatePronto());
+        pedido.setState(new StateVisualizado());
     }
-
-    
     
 }

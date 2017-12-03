@@ -10,6 +10,5 @@ package server.model;
  * @author junior
  */
 public interface State{
-    public String estadoPedido();
-    //public String estadoPedido();
+    public void proximoEstadoPedido(Pedido pedido);
 }
