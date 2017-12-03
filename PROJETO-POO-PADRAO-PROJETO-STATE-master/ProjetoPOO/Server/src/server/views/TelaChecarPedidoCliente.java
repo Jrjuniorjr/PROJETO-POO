@@ -46,6 +46,7 @@ public class TelaChecarPedidoCliente {
                         break;
                     default:
                         System.out.println("ERRO");
+						break;
                         
                 }
                 
